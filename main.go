@@ -14,6 +14,13 @@ func main() {
 	flag.Parse()
 	serie := fibonacci.Serie(*serieSize)
 	writer := os.Stdout
+	if *serieSize == 0 {
+		fmt.Println("FIBONACCI - produce a sequence of the fibonacci serie")
+		fmt.Println("")
+		fmt.Println("Usage: fibonacci -n <seq length> [-o <output file>]")
+		fmt.Println("")
+		return
+	}
 	if *fileName != "" {
 		var err error
 		writer, err = os.OpenFile(*fileName, os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
