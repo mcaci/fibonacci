@@ -2,7 +2,7 @@ package fibonacci
 
 // Serie func returns a fibonacci serie of size n
 func Serie(n int) []uint64 {
-	if n == 0 {
+	if n <= 0 {
 		return []uint64{}
 	}
 	if n == 1 {
